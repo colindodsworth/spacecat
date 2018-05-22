@@ -67,8 +67,29 @@ PIXI.loader.add('pickleback', 'dill-pickleback.png').load(function (loader, reso
 });
 
 
-
 var pickles = [];
+PIXI.loader.add('pickle', 'dillprimary.jpg').load(function (loader, resources) {
+  var shadow = new PIXI.filters.DropShadowFilter();
+  shadow.distance = 0;
+  shadow.blur = 20;
+
+  for (i=0; i<5; i++) {
+    var p = new PIXI.Sprite(resources.pickle.texture);
+    p.position.y = Math.random() * 400;
+    p.pivot.x = 480/2;
+    p.pivot.y = 263/2;
+    // p.scale.x = 0.5;
+    // p.scale.y = 0.5;
+
+    p.filters = [shadow];
+
+    pickles[i] = p;
+    foreground.addChild(p);
+  }
+});
+
+
+var oldpickles = [];
 PIXI.loader.add('pickle', 'dill-pickle.png').load(function (loader, resources) {
   var shadow = new PIXI.filters.DropShadowFilter();
   shadow.distance = 0;
@@ -172,6 +193,12 @@ function animate() {
     picklesback[i].rotation = Math.sign(i-1.4) * d / (2400 + 260 * i);
   }
 
+  for (i=0; i<oldpickles.length; i++) {
+    picklesback[i].position.x = ((d/(14+i) + i*300)) % (w + 400) - 100;
+    picklesback[i].position.y = 50 * Math.sin(i + d / 2500) + 90;
+    picklesback[i].rotation = Math.sign(i-1.9) * d / (1000 + 160 * i);
+  }
+
   catf.scale.x = (window.innerWidth/2 - mousex) / 80 + 6 * Math.sin(d/1000);
   catf.scale.y = (window.innerHeight/2 - mousey) / 80 + 6 * Math.cos(d/1200);
 
@@ -184,9 +211,9 @@ PIXI.loader.once('complete', animate);
 </script>
 
 <div id="overlay">
-  <img src="dill-pickle.png">
+  <img src="2018primary.jpg">
 </div>
-<img src="dill-pickle.png">
+<img src="2018primary.jpg">
 
 
 <script>
