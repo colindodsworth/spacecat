@@ -90,13 +90,13 @@ PIXI.loader.add('pickle', 'dillprimary.jpg').load(function (loader, resources) {
 
 
 var oldpickles = [];
-PIXI.loader.add('pickle', 'dill-pickle.png').load(function (loader, resources) {
+PIXI.loader.add('oldpickle', 'dill-pickle.png').load(function (loader, resources) {
   var shadow = new PIXI.filters.DropShadowFilter();
   shadow.distance = 0;
   shadow.blur = 20;
 
   for (i=0; i<5; i++) {
-    var p = new PIXI.Sprite(resources.pickle.texture);
+    var p = new PIXI.Sprite(resources.oldpickle.texture);
     p.position.y = Math.random() * 400;
     p.pivot.x = 480/2;
     p.pivot.y = 263/2;
@@ -105,7 +105,7 @@ PIXI.loader.add('pickle', 'dill-pickle.png').load(function (loader, resources) {
 
     p.filters = [shadow];
 
-    pickles[i] = p;
+    oldpickles[i] = p;
     foreground.addChild(p);
   }
 });
@@ -210,9 +210,9 @@ PIXI.loader.once('complete', animate);
 
 </script>
 
-<!-- <div id="overlay">
+<div id="overlay">
   <img src="2018primary.jpg">
-</div> -->
+</div>
 
 
 <script>
