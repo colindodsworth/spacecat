@@ -78,8 +78,8 @@ PIXI.loader.add('pickle', 'dillprimary.png').load(function (loader, resources) {
     p.position.y = Math.random() * 400;
     p.pivot.x = 480/2;
     p.pivot.y = 263/2;
-    // p.scale.x = 0.5;
-    // p.scale.y = 0.5;
+    p.scale.x = 0.9;
+    p.scale.y = 0.9;
 
     p.filters = [shadow];
 
@@ -210,9 +210,9 @@ PIXI.loader.once('complete', animate);
 
 </script>
 
-<!-- <div id="overlay">
+<div id="overlay">
   <img src="2018primary.jpg">
-</div> -->
+</div>
 <img src="2018primary.jpg" class="center">
 
 
