@@ -194,7 +194,7 @@ function animate() {
   }
 
   for (i=0; i<oldpickles.length; i++) {
-    picklesback[i].position.x = ((d/(14+i) + i*300)) % (w + 400) - 100;
+    oldpickles[i].position.x = ((d/(14+i) + i*300)) % (w + 400) - 100;
     picklesback[i].position.y = 50 * Math.sin(i + d / 2500) + 90;
     picklesback[i].rotation = Math.sign(i-1.9) * d / (1000 + 160 * i);
   }
