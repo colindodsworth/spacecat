@@ -3,27 +3,79 @@ body {
   padding: 0;
   background-color: Black;
 }
+
 canvas {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
-iframe {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
+
+.center {
+  text-align: center;
 }
 
+.card-image {
+  text-align: center;
+  max-width: 100%;
+}
 
+.become-cat {
+  margin: 20px 0;
+}
+.become-cat .eightbit-btn {
+  font-size: 21px;
+}
 
-#overlay {
-    position: absolute; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
+.position-button {
+  position: fixed;
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  z-index: 1;
+}
+
+.eightbit-btn {
+  cursor: pointer;
+  opacity: .9;
+  background: #92cd41;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
+  color: white;
+  box-shadow: inset -4px -4px 0px 0px #4aa52e;
+}
+.eightbit-btn:hover, .eightbit-btn:focus {
+  opacity: 1;
+  background: #76c442;
+  box-shadow: inset -6px -6px 0px 0px #4aa52e;
+}
+.eightbit-btn:active {
+  opacity: 1;
+  box-shadow: inset 4px 4px 0px 0px #4aa52e;
+}
+.eightbit-btn:before, .eightbit-btn:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+}
+.eightbit-btn:before {
+  top: -6px;
+  left: 0;
+  border-top: 6px black solid;
+  border-bottom: 6px black solid;
+}
+.eightbit-btn:after {
+  left: -6px;
+  top: 0;
+  border-left: 6px black solid;
+  border-right: 6px black solid;
 }
