@@ -35,6 +35,17 @@ canvas {
   margin-top: -100px;
   margin-left: -250px;
   z-index: 1;
+=======
+#overlay1 {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+}
+#overlay1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
 }
 
 .eightbit-btn {
