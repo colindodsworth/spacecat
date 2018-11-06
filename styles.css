@@ -2,15 +2,31 @@ body {
   margin: 0;
   padding: 0;
   background-color: Black;
+  font-family: 'Press Start 2P';
+  text-decoration: none;
+  color: white;
 }
+
+#stretch, img{
+  width: 100%;
+  height: 100%;
+}
+
+#nostretch {
+  width: 30%;
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* fuck it for now:
 
 canvas {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-
-/* fuck it for now:
 
 iframe {
   visibility: hidden;
