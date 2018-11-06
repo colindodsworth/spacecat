@@ -67,6 +67,28 @@ PIXI.loader.add('pickle', '../images/dillprimary.png').load(function (loader, re
   }
 });
 
+//
+// var oldpickles = [];
+// PIXI.loader.add('oldpickle', 'dill-pickle.png').load(function (loader, resources) {
+//   var shadow = new PIXI.filters.DropShadowFilter();
+//   shadow.distance = 0;
+//   shadow.blur = 20;
+//
+//   for (i=0; i<5; i++) {
+//     var p = new PIXI.Sprite(resources.oldpickle.texture);
+//     p.position.y = Math.random() * 400;
+//     p.pivot.x = 480/2;
+//     p.pivot.y = 263/2;
+//     // p.scale.x = 0.5;
+//     // p.scale.y = 0.5;
+//
+//     p.filters = [shadow];
+//
+//     oldpickles[i] = p;
+//     foreground.addChild(p);
+//   }
+// });
+
 
 PIXI.loader.add('cat', '../images/mesmercat.png').load(function (loader, resources) {
   cat = new PIXI.Sprite(resources.cat.texture);
@@ -110,6 +132,10 @@ PIXI.loader.add('displacement', '../images/clouds.jpg').load(function (loader, r
   f2.blue.x = 2;
   f2.blue.y = -2;
 
+  // f3 = new PIXI.filters.TiltShiftFilter();
+  // f3.gradientBlur = 800;
+  // f3.blur = 20;
+
   container.filters = [f2, f1];
   container.addChild(d1);
 });
@@ -145,6 +171,12 @@ function animate() {
     picklesback[i].position.y = 90 * Math.sin(i + d / 4500) + 160;
     picklesback[i].rotation = Math.sign(i-1.4) * d / (2400 + 260 * i);
   }
+
+  // for (i=0; i<oldpickles.length; i++) {
+  //   oldpickles[i].position.x = ((d/(14+i) + i*300)) % (w + 400) - 100;
+  //   oldpickles[i].position.y = 50 * Math.sin(i + d / 2500) + 90;
+  //   oldpickles[i].rotation = Math.sign(i-1.9) * d / (1000 + 160 * i);
+  // }
 
   catf.scale.x = (window.innerWidth/2 - mousex) / 80 + 6 * Math.sin(d/1000);
   catf.scale.y = (window.innerHeight/2 - mousey) / 80 + 6 * Math.cos(d/1200);

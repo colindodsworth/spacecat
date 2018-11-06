@@ -5,7 +5,7 @@ body {
 }
 
 canvas {
-  /* position: absolute; */
+  position: absolute;
   width: 100%;
   height: 100%;
 }
@@ -41,14 +41,12 @@ iframe {
   margin-top: -100px;
   margin-left: -250px;
   z-index: 1;
-}
-
+=======
 #overlay1 {
     position: absolute;
     top: 150px;
     width: 100%;
 }
-
 #overlay1 img {
     display: block;
     margin-left: auto;
