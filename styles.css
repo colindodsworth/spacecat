@@ -19,6 +19,9 @@ body {
   margin-right: auto;
 }
 
+a {
+  color: #5fff00; /* Changes all links to red */
+}
 
 /* fuck it for now:
 
